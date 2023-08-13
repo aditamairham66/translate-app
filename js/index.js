@@ -56,6 +56,8 @@ icons.forEach(icon => {
                 navigator.clipboard.writeText(toText.value);
             }
         } else {
+            console.log(fromText.value)
+            console.log(toText.value)
             let utterance;
             if (target.id == "from") {
                 utterance = new SpeechSynthesisUtterance(fromText.value);
@@ -64,6 +66,7 @@ icons.forEach(icon => {
                 utterance = new SpeechSynthesisUtterance(toText.value);
                 utterance.lang = selectTag[1].value;
             }
+            console.log(utterance)
             speechSynthesis.speak(utterance);
         }
     });
